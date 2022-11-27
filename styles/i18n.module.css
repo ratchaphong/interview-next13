@@ -1,0 +1,19 @@
+.container {
+  padding: 0 2rem;
+  color: var(--secondary-bg-color);
+  /* background-color: #f1f1f1; */
+}
+
+.languages {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+}
+
+@media (prefers-color-scheme: dark) {
+  .container {
+    padding: 0 4rem;
+    color: #f1f1f1;
+    /* background-color: #000000; */
+  }
+}

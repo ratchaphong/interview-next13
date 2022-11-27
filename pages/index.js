@@ -40,6 +40,11 @@ export default function Home() {
           </Link>
         </li>
         <li>
+          <Link href="/i18n">
+            <small>i18n</small>
+          </Link>
+        </li>
+        <li>
           <Link href="/profile">
             <small>Profile</small>
           </Link>
@@ -58,7 +63,7 @@ export default function Home() {
         </li>
         <li>
           <Link href="/api/posts">
-            <small>api posts</small>
+            <small>ETC.</small>
           </Link>
         </li>
       </ul>
@@ -67,3 +72,4 @@ export default function Home() {
 }
 
 // npx create-next-app@latest hello-next
+// npm i react-intl   i18n

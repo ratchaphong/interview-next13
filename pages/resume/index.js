@@ -7,13 +7,35 @@ import {
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./index.module.css";
+import { FormattedMessage } from "react-intl";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 const Resume = () => {
+  const { locales, locale, asPath } = useRouter();
   return (
     <div className={styles.body}>
       <div className={styles.wrapper}>
-        <div className={styles.title}>Frontend Developer (Junior Level)</div>
-        <div className={styles.uname}>Muhammad Bb Parattakorn</div>
+        <ul className={styles.languages}>
+          {[...locales].sort().map((lc) => (
+            <li className={locale === lc ? styles.activeLocale : {}}>
+              <Link
+                key={lc}
+                href={asPath}
+                locale={lc}
+                activeClassName={locale === lc}
+              >
+                {lc}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <div className={styles.title}>
+          <FormattedMessage id="page.resume.occupation" />
+        </div>
+        <div className={styles.uname}>
+          <FormattedMessage id="page.resume.name" />
+        </div>
         <div className={styles.social}>
           <a href="http://" target="_blank" rel="noopener noreferrer">
             {/* <i class="fa-brands fa-instagram"></i> */}
